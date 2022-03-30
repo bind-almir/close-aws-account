@@ -15,7 +15,7 @@ const handler = async (event) => {
     }
 
     const { ids } = event;
-    const closeAccounts = await ids.map(async AccountId => await organizations.closeAccount({ AccountId }).promise());
+    const closeAccounts = ids.map(async AccountId => await organizations.closeAccount({ AccountId }).promise());
     await Promise.all(closeAccounts);
 
     return 'success';
