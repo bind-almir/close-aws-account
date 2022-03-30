@@ -6,11 +6,11 @@ const handler = async (event) => {
     const params = {
       AccountId
     };
-    const result = await organizations.closeAccount(params).promise();
-    return result;
+    await organizations.closeAccount(params).promise();
+    return 'success';
   } catch(err) {
     console.log(err);
-    return false;
+    return 'failed';
   }
 };
 
