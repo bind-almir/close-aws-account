@@ -5,4 +5,23 @@ AWS introduced API to [close the AWS Account](https://github.com/aws/aws-sdk-js/
 `export AWS_PROFILE=default`
 `sls deploy`
 
-Pass "AccountId" as a string parameter to the function.
+Pass "AccountId" as a string parameter to the function or an array of account numbers to the function.
+
+Single account:
+
+```javascript
+{
+  "AccountId": "123456789012"
+}
+```
+
+Array of account ids:
+```javascript
+{
+  "ids": [
+    "123456789012",
+    "123456789013",
+    "etc"
+  ]
+}
+```
